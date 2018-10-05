@@ -249,14 +249,14 @@ suite('Functional Tests', function() {
             // pressButton is Async.  Waits for the ajax call to complete...
 
             // assert that status is OK 200
-
-            // assert that the text inside the element 'span#name' is 'Marco'
-
+            browser.assert.success();
+            // assert that the text inside the element 'span#name' is 'Cristoforo'
+            browser.assert.text('span#name', 'Cristoforo');
             // assert that the text inside the element 'span#surname' is 'Polo'
-
+            browser.assert.text('span#surname', 'Colombo');
             // assert that the element(s) 'span#dates' exist and their count is 1
-            
-            assert.fail();
+            browser.assert.element('span#dates', 1);
+            // assert.fail();
             
             done();   // It's an async test, so we have to call 'done()''
           });
@@ -265,14 +265,32 @@ suite('Functional Tests', function() {
       
       /** Try it again... No help this time **/
       test('submit "surname" : "Vespucci" - write your e2e test...', function(done) {
+        browser
+            .fill('surname', 'Vespucci')
+            .pressButton('submit', function(){
 
+              /** YOUR TESTS HERE, Don't forget to remove assert.fail() **/
+
+              // pressButton is Async.  Waits for the ajax call to complete...
+
+              // assert that status is OK 200
+              browser.assert.success();
+              // assert that the text inside the element 'span#name' is 'Cristoforo'
+              browser.assert.text('span#name', 'Amerigo');
+              // assert that the text inside the element 'span#surname' is 'Polo'
+              browser.assert.text('span#surname', 'Vespucci');
+              // assert that the element(s) 'span#dates' exist and their count is 1
+              browser.assert.element('span#dates', 1);
+
+              done();   // It's an async test, so we have to call 'done()''
+            });
         // fill the form, and submit.
         // assert that status is OK 200
         // assert that the text inside the element 'span#name' is 'Amerigo'
         // assert that the text inside the element 'span#surname' is 'Vespucci'
         // assert that the element(s) 'span#dates' exist and their count is 1
-        assert.fail();
-        done();
+        // assert.fail();
+        // done();
       
       });
     });
