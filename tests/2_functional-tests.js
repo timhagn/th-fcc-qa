@@ -137,7 +137,6 @@ suite('Functional Tests', function() {
       /** Repetition is the mother of learning. **/
       // Try it again. This time without help !!
       test('send {surname: "da Verrazzano"}', function(done) {
-        // we setup the request for you...
         chai.request(server)
             .put('/travellers')
             .send({surname: 'da Verrazzano'})
@@ -148,7 +147,7 @@ suite('Functional Tests', function() {
 
               assert.equal(res.body.name, 'Giovanni', 'res.body.name should be "Giovanni"');
               assert.equal(res.body.surname, 'da Verrazzano', 'res.body.surname should be "da Verrazzano"' );
-              done(); // Never forget the 'done()' callback...
+              done();
             });
       });
     });
@@ -170,7 +169,7 @@ suite('Functional Tests', function() {
 
   // On Gomix we'll use this setting
   /** ### Copy your project's url here  ### **/
-  Browser.site = 'https://sincere-cone.gomix.me'; 
+  Browser.site = 'https://th-fcc-qa.glitch.me/';
   
   // If you are testing on a local environment replace the line above  with 
   // Browser.localhost('example.com', (process.env.PORT || 3000));
