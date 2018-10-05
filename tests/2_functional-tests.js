@@ -209,9 +209,8 @@ suite('Functional Tests', function() {
       
       // ### EXAMPLE ###
       test('#example - submit the input "surname" : "Polo"', function(done) {
-        browser
-          .fill('surname', 'Polo')
-          .pressButton('submit', function(){
+        browser.fill('surname', 'Polo');
+        browser.pressButton('submit', function(){
             // pressButton is ## Async ##.  
             // It waits for the ajax call to complete...
 
@@ -240,9 +239,8 @@ suite('Functional Tests', function() {
         // assert that the text inside the element 'span#name' is 'Cristoforo'
         // assert that the text inside the element 'span#surname' is 'Colombo'
         // assert that the element(s) 'span#dates' exist and their count is 1
-        browser
-          .fill('surname', 'Colombo')
-          .pressButton('submit', function(){
+        browser.fill('surname', 'Colombo');
+        browser.pressButton('submit', function(){
             
             /** YOUR TESTS HERE, Don't forget to remove assert.fail() **/
             
@@ -265,9 +263,8 @@ suite('Functional Tests', function() {
       
       /** Try it again... No help this time **/
       test('submit "surname" : "Vespucci" - write your e2e test...', function(done) {
-        browser
-            .fill('surname', 'Vespucci')
-            .pressButton('submit', function(){
+        browser.fill('surname', 'Vespucci');
+        browser.pressButton('submit', function(){
 
               /** YOUR TESTS HERE, Don't forget to remove assert.fail() **/
 
